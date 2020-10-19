@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: wheat;
+    overflow: hidden;
+}
+.game-container{
+    background: violet;
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+}
+.reset{
+    visibility: hidden;
+    width: 50%;
+    height: 35%;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    z-index: 1;
+    background: rgb(47, 47, 161);
+    border-radius: 10px;
+    box-shadow: 0px 0px 36px 15px rgba(0, 0, 0, 0.45);
+}
+.game-over{
+    text-align: center;
+    font-size: 50px;
+    color: cornsilk;
+    position: absolute;
+    top: 9vh;
+    left: 18vw;
+}
+.menu{
+    font-size: 30px;
+    text-align: center;
+    padding: 8px;
+    background: rgb(228, 127, 55);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 0 15px;
+    position: absolute;
+    top: 100px;
+    left: 4vw;
+    cursor: pointer;
+    border: none;
+}
+.menu:hover{
+    color: rgb(228, 127, 55);
+    background: black;
+}
+.score{
+    background:  rgb(47, 47, 161);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding:10px;
+    color: blanchedalmond;
+    border-radius: 10px;
+}
+.max-score{
+    background:  rgb(47, 47, 161);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding:10px;
+    color: blanchedalmond;
+    border-radius: 10px;
+}
+.show{
+    font-size: 20px;
+    color: whitesmoke;
+    position: absolute;
+    top: 15px;
+    left: 340px;
+}
+.show span{
+    font-size: 50px;
+    color:rgb(255, 111, 8);
+}
+.character{
+    background: url(images/char.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 144px;
+    height: 195px;
+    position: absolute;
+    bottom: 140px;
+}
+.enemy{
+    background-image: url(images/enemy.png);
+    background-size: cover;
+    width: 144px;
+    height: 192px;
+    position: absolute;
+    bottom: 140px;
+    left: 50vw;
+}
+.jump{
+    animation: jump .6s ease-in;
+    transition-delay: 0;
+}
+@keyframes jump{
+    0%{
+        background-image: url(images/jump1.png);
+        bottom: 140px;
+    }
+    25%{
+        background-image: url(images/jump1.png);
+        bottom: 290px;
+    }
+    50%{
+        background-image: url(images/jump1.png);
+        bottom: 450px;
+    }
+    50%{
+        background-image: url(images/jump2.png);
+        bottom: 450px;
+    }
+    80%{
+        background-image: url(images/jump3.png);
+        bottom: 350px;
+    }
+    100%{
+        background-image: url(images/jump3.png);
+        bottom: 140px;
+    }
+}
+.run{
+    animation: run .6s linear;
+}
+@keyframes run{
+    0%{
+        background-image: url(images/char1.png);
+    }
+    50%{
+        background-image: url(images/char2.png);
+    }
+    100%{
+        background-image: url(images/char1.png);
+    }
+}
+.enemyani{
+    animation: enemy 3s linear infinite;
+}
+@keyframes enemy{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -10vw;
+    }
+}
